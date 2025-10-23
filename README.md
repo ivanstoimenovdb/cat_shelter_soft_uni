@@ -3,4 +3,8 @@ Excercise 1 Soft Uni
 
 ## TODOs
 
-- [ ] Initialize Node js projec.
+- [X] Initialize Node js projec.
+- [X] Dev environment:
+    -[ ] Dev script;
+    -[ ] Debugging;
+
