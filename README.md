@@ -7,4 +7,5 @@ Excercise 1 Soft Uni
 - [X] Dev environment:
     -[X] Dev script;
     -[X] Debugging;
+- [X] Create basic node server.
 
