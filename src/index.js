@@ -53,20 +53,20 @@ const server = http.createServer(async (req, res) => {
     res.end();
 })
 
-async function renderView(path) {
+async function readFile(path) {
     return await fs.readFile(path, { encoding: 'utf-8' });
 }
 
 async function homeView() {
-    return await renderView("./src/views/home/index.html");
+    return await readFile("./src/views/home/index.html");
 }
 
 async function addBreedView() {
-    return await renderView("./src/views/addBreed.html");
+    return await readFile("./src/views/addBreed.html");
 }
 
 async function addAddCatView() {
-    return await renderView("./src/views/addCat.html");;
+    return await readFile("./src/views/addCat.html");;
 }
 
 server.listen(5000);
