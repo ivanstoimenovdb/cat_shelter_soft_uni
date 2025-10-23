@@ -14,3 +14,5 @@ Excercise 1 Soft Uni
 - [X] Extract css into separate js files
 - [X] Read home html from file system.
 - [X] Read style css from file system.
+- [] Creat cat page.
+- [X] Creat breed page.
