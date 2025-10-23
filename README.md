@@ -5,6 +5,6 @@ Excercise 1 Soft Uni
 
 - [X] Initialize Node js projec.
 - [X] Dev environment:
-    -[ ] Dev script;
-    -[ ] Debugging;
+    -[X] Dev script;
+    -[X] Debugging;
 
