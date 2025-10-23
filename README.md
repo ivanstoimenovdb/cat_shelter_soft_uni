@@ -12,3 +12,4 @@ Excercise 1 Soft Uni
 - [X] Open homepage.
 - [X] Add css
 - [X] Extract css into separate js files
+- [ ] Read home html from file system.
