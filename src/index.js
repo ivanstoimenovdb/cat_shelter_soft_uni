@@ -32,7 +32,7 @@ const server = http.createServer(async (req, res) => {
         case '/cats/add-cat':
             content = await addAddCatView();
             break;
-         case '/styles/site.css':
+        case '/styles/site.css':
             const siteCss = await fs.readFile("./src/styles/site.css", { encoding: 'utf-8' });
 
             res.writeHead(200, {
@@ -42,33 +42,31 @@ const server = http.createServer(async (req, res) => {
             res.write(siteCss);
             return res.end();
         default:
-           return res.end();
+            return res.end();
     }
-        res.writeHead(200, {
-            'content-type': 'text/html',
-        })
+    res.writeHead(200, {
+        'content-type': 'text/html',
+    })
 
-        res.write(content);
+    res.write(content);
 
     res.end();
 })
 
-async function homeView() {
-    const homeHtml = await fs.readFile("./src/views/home/index.html", { encoding: 'utf-8' });
+async function renderView(path) {
+    return await fs.readFile(path, { encoding: 'utf-8' });
+}
 
-    return homeHtml;
+async function homeView() {
+    return await renderView("./src/views/home/index.html");
 }
 
 async function addBreedView() {
-    const breedPage = await fs.readFile("./src/views/addBreed.html", { encoding: 'utf-8' });
-
-    return breedPage;
+    return await renderView("./src/views/addBreed.html");
 }
 
 async function addAddCatView() {
-    const addCatPage = await fs.readFile("./src/views/addCat.html", { encoding: 'utf-8' });
-
-    return addCatPage;
+    return await renderView("./src/views/addCat.html");;
 }
 
 server.listen(5000);
