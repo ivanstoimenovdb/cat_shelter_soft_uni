@@ -1,5 +1,4 @@
 import http from 'http';
-import siteCss from './style.css.js';
 import fs from 'fs/promises';
 
 const server = http.createServer(async (req, res) => {
@@ -16,6 +15,8 @@ const server = http.createServer(async (req, res) => {
         res.writeHead(200, {
             "content-type": "text/css",
         })
+
+        const siteCss = await fs.readFile("./src/styles/site.css");
 
         res.write(siteCss);
 
