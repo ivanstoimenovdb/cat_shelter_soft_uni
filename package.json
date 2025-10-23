@@ -1,0 +1,22 @@
+{
+  "name": "cat_shelter_soft_uni",
+  "version": "1.0.0",
+  "description": "Excercise 1 Soft Uni",
+  "main": "index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ivanstoimenovdb/cat_shelter_soft_uni.git"
+  },
+  "keywords": [],
+  "author": "",
+  "type": "module",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ivanstoimenovdb/cat_shelter_soft_uni/issues"
+  },
+  "homepage": "https://github.com/ivanstoimenovdb/cat_shelter_soft_uni#readme"
+}
