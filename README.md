@@ -8,4 +8,4 @@ Excercise 1 Soft Uni
     -[X] Dev script;
     -[X] Debugging;
 - [X] Create basic node server.
-
+- [X] Add resources.
