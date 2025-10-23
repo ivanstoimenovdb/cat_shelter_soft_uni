@@ -3,4 +3,4 @@ Excercise 1 Soft Uni
 
 ## TODOs
 
-- [ ] hello sdasda 
+- [ ] Initialize Node js projec.
