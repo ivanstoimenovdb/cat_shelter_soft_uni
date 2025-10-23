@@ -29,6 +29,9 @@ const server = http.createServer(async (req, res) => {
         case '/cats/add-breed':
             content = await addBreedView();
             break;
+        case '/cats/add-cat':
+            content = await addAddCatView();
+            break;
          case '/styles/site.css':
             const siteCss = await fs.readFile("./src/styles/site.css", { encoding: 'utf-8' });
 
@@ -60,6 +63,12 @@ async function addBreedView() {
     const breedPage = await fs.readFile("./src/views/addBreed.html", { encoding: 'utf-8' });
 
     return breedPage;
+}
+
+async function addAddCatView() {
+    const addCatPage = await fs.readFile("./src/views/addCat.html", { encoding: 'utf-8' });
+
+    return addCatPage;
 }
 
 server.listen(5000);
