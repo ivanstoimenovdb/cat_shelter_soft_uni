@@ -3,4 +3,4 @@ Excercise 1 Soft Uni
 
 ## TODOs
 
-- [X] hello sdasda 
+- [ ] hello sdasda 
