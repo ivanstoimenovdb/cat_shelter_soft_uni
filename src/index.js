@@ -1,26 +1,8 @@
 import http from 'http';
 import fs from 'fs/promises';
+import cats from './cats.js';
 
 const server = http.createServer(async (req, res) => {
-    // if (req.url === '/') {
-
-    //     const homeHtml = await fs.readFile("./src/views/home/index.html", { encoding: 'utf-8'});
-
-    //     res.writeHead(200, {
-    //         "content-type": 'text/html',
-    //     })
-
-    //     res.write(homeHtml);
-    // }else if (req.url === '/styles/site.css') {
-    //     res.writeHead(200, {
-    //         "content-type": "text/css",
-    //     })
-
-    //     const siteCss = await fs.readFile("./src/styles/site.css");
-
-    //     res.write(siteCss);
-
-    // }
     let content;
     switch (req.url) {
         case '/':
@@ -58,7 +40,10 @@ async function readFile(path) {
 }
 
 async function homeView() {
-    return await readFile("./src/views/home/index.html");
+    const content = await readFile("./src/views/home/index.html");
+    const catHtml = cats.map(cat => templateCat(cat)).join('\n');
+    const result = content.replace('{{cats}}', catHtml);
+    return result;
 }
 
 async function addBreedView() {
@@ -67,6 +52,21 @@ async function addBreedView() {
 
 async function addAddCatView() {
     return await readFile("./src/views/addCat.html");;
+}
+
+function templateCat(cat) {
+    return `
+    <li>
+                    <img src=${cat.imageUrl} alt=${cat.name}>
+                    <h3></h3>
+                    <p><span>Breed: </span>${cat.breed}</p>
+                    <p><span>Description: </span>${cat.description}</p>
+                    <ul class="buttons">
+                        <li class="btn edit"><a href="">Change Info</a></li>
+                        <li class="btn delete"><a href="">New Home</a></li>
+                    </ul>
+                </li>
+    `
 }
 
 server.listen(5000);

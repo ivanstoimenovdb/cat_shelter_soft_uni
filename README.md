@@ -17,5 +17,5 @@ Excercise 1 Soft Uni
 - [X] Creat cat page.
 - [X] Creat breed page.
 - [X] renderView generic function.
-- [] Render dynamic cats page.
+- [X] Render dynamic cats page.
 - [] Add cats from Add-cats page.
