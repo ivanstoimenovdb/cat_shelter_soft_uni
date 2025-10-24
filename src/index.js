@@ -4,6 +4,27 @@ import cats from './cats.js';
 
 const server = http.createServer(async (req, res) => {
     let content;
+
+    if(req.method === 'POST'){
+        console.log('Post method execution....');
+        let data = '';
+        req.on('data', (chunk) =>{
+            data += chunk.toString();
+        })
+
+        req.on('end', () => {
+            const searchParams = new URLSearchParams(data);
+
+            const newCat = Object.fromEntries(searchParams.entries());
+
+            cats.push(newCat);
+
+            // TODO Redirect to home page.
+        })
+
+    }
+
+    
     switch (req.url) {
         case '/':
             content = await homeView();
