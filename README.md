@@ -19,5 +19,5 @@ Excercise 1 Soft Uni
 - [X] renderView generic function.
 - [X] Render dynamic cats page.
 - [X] Add cats from Add-cats page.
-- [] Redirect to home page.
 - [X] Conditional rendering to cats.
+- [X] Redirect to home page.

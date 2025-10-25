@@ -21,8 +21,13 @@ const server = http.createServer(async (req, res) => {
             cats.push(newCat);
 
             // TODO Redirect to home page.
-        })
-
+           res.writeHead(302, {
+            'location' : '/'
+           }
+           ) ;
+          res.end();
+        });
+         return;
     }
 
     
