@@ -20,4 +20,4 @@ Excercise 1 Soft Uni
 - [X] Render dynamic cats page.
 - [X] Add cats from Add-cats page.
 - [] Redirect to home page.
-- [] Conditional rendering to cats.
+- [X] Conditional rendering to cats.

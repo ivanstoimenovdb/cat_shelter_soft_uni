@@ -2,9 +2,10 @@ import http from 'http';
 import fs from 'fs/promises';
 import cats from './cats.js';
 
+
 const server = http.createServer(async (req, res) => {
     let content;
-
+    
     if(req.method === 'POST'){
         console.log('Post method execution....');
         let data = '';
@@ -62,8 +63,14 @@ async function readFile(path) {
 
 async function homeView() {
     const content = await readFile("./src/views/home/index.html");
-    const catHtml = cats.map(cat => templateCat(cat)).join('\n');
-    const result = content.replace('{{cats}}', catHtml);
+
+    let catsHtml = ''
+    if(cats.length > 0){
+        catsHtml = cats.map(cat => templateCat(cat)).join('\n');
+    }else{
+        catsHtml = `<spnam>There are no cats to be shown</span>`;
+    }
+    const result = content.replace('{{cats}}', catsHtml);
     return result;
 }
 
