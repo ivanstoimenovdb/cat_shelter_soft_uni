@@ -1,6 +1,6 @@
 import http from 'http';
 import fs from 'fs/promises';
-import cats from './cats.js';
+import * as model from './data.js'
 
 
 const server = http.createServer(async (req, res) => {
@@ -13,18 +13,19 @@ const server = http.createServer(async (req, res) => {
             data += chunk.toString();
         })
 
-        req.on('end', () => {
+        req.on('end', async () => {
             const searchParams = new URLSearchParams(data);
 
             const newCat = Object.fromEntries(searchParams.entries());
 
-            cats.push(newCat);
+            await model.saveCat(newCat);
 
             // TODO Redirect to home page.
            res.writeHead(302, {
             'location' : '/'
            }
            ) ;
+
           res.end();
         });
          return;
@@ -68,7 +69,8 @@ async function readFile(path) {
 
 async function homeView() {
     const content = await readFile("./src/views/home/index.html");
-
+    
+    const cats = await model.getCats();
     let catsHtml = ''
     if(cats.length > 0){
         catsHtml = cats.map(cat => templateCat(cat)).join('\n');

@@ -21,3 +21,8 @@ Excercise 1 Soft Uni
 - [X] Add cats from Add-cats page.
 - [X] Conditional rendering to cats.
 - [X] Redirect to home page.
+- [ ] Add cats persistence.
+- [ ] Add dynamic breeds.
+
+
+- [ ] Cache CSS.
